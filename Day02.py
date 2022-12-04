@@ -1,4 +1,10 @@
 def get_score(guide):
+    """
+    Part 1 of Day 2
+    :param guide: list containing the shapes of the opponent and
+    the recommended answer from the encrypted strategy guide
+    :return: the score as int
+    """
     shape_score = {"X": 1, "Y": 2, "Z": 3}
     draw = ["A X", "C Z", "B Y"]
     win = ["C X", "B Z", "A Y"]
@@ -13,6 +19,12 @@ def get_score(guide):
 
 
 def real_score(guide):
+    """
+    Part 2 of Day 2
+    :param guide: list containing the shapes of the opponent and
+    the recommended result of the rounds from the encrypted strategy guide
+    :return: the score as int
+    """
     shape_score = {"A": 0, "B": 1, "C": 2}
     score = 0
     for turn in guide:
@@ -32,6 +44,12 @@ def real_score(guide):
 
 
 def real_score_alternative(guide):
+    """
+    Alternative Part 2 of Day 2
+    :param guide: list containing the shapes of the opponent and
+    the recommended result of the rounds from the encrypted strategy guide
+    :return: the score as int
+    """
     draw_score = {"A": 1, "B": 2, "C": 3}
     win_score = {"A": 2, "B": 3, "C": 1}
     lose_score = {"A": 3, "B": 1, "C": 2}
