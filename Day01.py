@@ -1,4 +1,9 @@
 def get_max(calories):
+    """
+    Part 1 of Day 1
+    :param calories: list that represents the Calories of the food carried the Elves
+    :return: the maximal calories
+    """
     max_cal = 0
     curr_cal = 0
     for i in range(0, len(calories)):
@@ -13,17 +18,12 @@ def get_max(calories):
     return max_cal
 
 
-def get_list(my_file):
-    L = []
-    for line in my_file.readlines():
-        my_var = line.strip()
-        if my_var:
-            my_var = int(my_var)
-        L += [my_var]
-    return L
-
-
 def get_top3(calories):
+    """
+    Part 2 of Day 1
+    :param calories: list that represents the Calories of the food carried the Elves
+    :return: the top 3 maximal calories
+    """
     max1 = 0
     max2 = 0
     max3 = 0
