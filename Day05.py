@@ -4,9 +4,9 @@ from collections import deque
 def rearrange(cargos, moves):
     """
     part 1 of day 5
-    :param cargos:
-    :param moves:
-    :return:
+    :param cargos: starting stacks of crates (as a list of deques)
+    :param moves: rearrangement procedure (as a list of lists)
+    :return: the stacks of crates after the rearrangement (as a list of deques)
     """
     stacks = []
     for level in reversed(cargos):
@@ -31,9 +31,9 @@ def rearrange(cargos, moves):
 def rearrange_part2(cargos, moves):
     """
     part 2 of day 5
-    :param cargos:
-    :param moves:
-    :return:
+    :param cargos: starting stacks of crates (as a list of deques)
+    :param moves: rearrangement procedure (as a list of lists)
+    :return: the stacks of crates after the rearrangement (as a list of deques)
     """
     stacks = []
     for level in reversed(cargos):
