@@ -1,12 +1,12 @@
-import Day06
+import Day08
 import convert
 
 # get the input
-with open('C:/Users/Kimi/Documents/Advent of code/06input.txt', 'r') as file:
-    data = file.read().replace('\n', '')
+my_file = open('C:/Users/Kimi/Documents/Advent of code/08input.txt', 'r')
 
-# try code for day 6
-
-res = Day06.get_start(data)
+# try code for day 8
+L = convert.list_of_list(my_file)
+res = Day08.scenic_score(L)
 print(res)
+
 
