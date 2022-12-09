@@ -72,3 +72,43 @@ def lists_for_moves(my_file):
     return cargo, L
 
 
+def terminal(code):
+    dir_of_dir = {}
+    size = {}
+    get_info = False
+    current_dir = -1
+    for line in code.readlines():
+        words = line.strip().split(" ")
+        if line.startswith("$ cd"):
+            if words[-1] == "/":
+                current_dir = "/"
+            elif words[-1] == "..":
+                all_dirs = list(dir_of_dir.keys())
+                current_dir = all_dirs[all_dirs.index(current_dir) - 1]
+            else:
+                current_dir = words[-1]
+        if line.strip() == "$ ls":
+            if current_dir not in dir_of_dir:
+                dir_of_dir[current_dir] = []
+            get_info = True
+        elif line.startswith("$"):
+            get_info = False
+        if get_info and line.startswith("dir"):
+
+            dir_of_dir[current_dir] += [words[-1]]
+
+        if line[0].isdigit():
+            if current_dir not in size:
+                size[current_dir] = 0
+            size[current_dir] += int(line.split(" ")[0])
+
+    return size, dir_of_dir
+
+
+def list_of_list(trees):
+    all_heights = []
+    for line in trees:
+        line = line.strip()
+        heights = [int(char) for char in line]
+        all_heights += [heights]
+    return all_heights
